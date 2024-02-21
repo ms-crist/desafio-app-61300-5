@@ -53,7 +53,6 @@ function ItemListCategories({ navigation, route  }) {
         keyExtractor={(item) => item.id}
       />
       <View style={{width: "100%"}} >
-      <Footer/>
       </View>
     </View>
   );

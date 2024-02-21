@@ -4,8 +4,10 @@ import ShopStack from "../navigation/ShopStack";
 import CartStack from "./CartStack";
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
-import { Entypo, AntDesign, FontAwesome } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Octicons, FontAwesome, Fontisto } from "@expo/vector-icons";
 import OrdersStack from "./OrdersStack";
+import { fonts } from "../global/fonts";
+
 
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator();
@@ -25,8 +27,8 @@ const TabNavigator = () => {
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={styles.tabContainer}>
-                  <Entypo name="shop" size={30} color={focused ? "black" : "grey"} />
-                  <Text style={{ color: focused ? "black" : "grey" }}>Shop</Text>
+                  <Fontisto name="shopping-store" size={30} color={focused ? "white" : "black"} />
+                  <Text style={{ color: focused ? "white" : "black" }}>Tienda</Text>
                 </View>
               );
             },
@@ -39,12 +41,8 @@ const TabNavigator = () => {
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={styles.tabContainer}>
-                  <AntDesign
-                    name="shoppingcart"
-                    size={30}
-                    color={focused ? "black" : "grey"}
-                  />
-                  <Text style={{ color: focused ? "black" : "grey" }}>Cart</Text>
+                  <MaterialCommunityIcons name="cart-variant" size={30} color={focused ? "white" : "black"} />
+                  <Text style={{ color: focused ? "white" : "black" }}>Carrito</Text>
                 </View>
               );
             },
@@ -57,12 +55,8 @@ const TabNavigator = () => {
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={styles.tabContainer}>
-                  <FontAwesome
-                    name="list-ul"
-                    size={30}
-                    color={focused ? "black" : "grey"}
-                  />
-                  <Text style={{ color: focused ? "black" : "grey" }}>Orders</Text>
+                  <Octicons name="checklist" size={30} color={focused ? "white" : "black"} />
+                  <Text style={{ color: focused ? "white" : "black" }}>Órdenes</Text>
                 </View>
               );
             },
@@ -77,11 +71,13 @@ export default TabNavigator;
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: colors.blue_100,
+    backgroundColor: colors.green_400,
     height: 70,
   },
   tabContainer: {
     justifyContent: "center",
     alignItems: "center",
+    fontFamily: "PoppinsBold",
+    fontSize: 18
   },
 });

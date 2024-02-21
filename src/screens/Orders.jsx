@@ -4,7 +4,7 @@ import OrderItem from "../components/OrderItem";
 
 const Orders = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={orders}
         renderItem={({ item }) => <OrderItem item={item} />}
@@ -16,4 +16,8 @@ const Orders = () => {
 
 export default Orders;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'column'
+  }
+});
